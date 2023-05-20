@@ -1,0 +1,21 @@
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+{% block titile %}
+    <title>Create school</title>
+{% endblock %}
+
+{% block body_block %}
+<center>
+    <nav class="nav" style="background-color: rgb(244, 132, 236);">
+        <a href="{% url 'home' %}" class="nav-link">Home Page</a>
+        <a href="{% url 'List_of_school' %}" class="nav-link">List_of_schools</a>
+    </nav>
+    <h1>Create School</h1>
+    <form method="POST" style="border: 2px solid; width:fit-content; padding:40px; border-radius:10px; background-color:aquamarine;">
+        {% csrf_token %}
+            {{form.as_p}}
+
+        <input type="submit" value="Create" class="btn btn-primary">
+    </form>
+</center>
+{% endblock %}

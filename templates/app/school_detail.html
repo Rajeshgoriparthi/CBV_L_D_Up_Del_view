@@ -1,0 +1,23 @@
+{% extends 'app/dummy.html' %}
+
+{% block titile %}
+    <title>Details_of_school</title>
+{% endblock %}
+
+{% block body_block %}
+    <center>
+        <h1>Details of {{schools.name}} object</h1>
+        <h3>School id : {{schools.id}}</h3>
+        <h3>School Name : {{schools.name}}</h3>
+
+        <h3>Principal of schools : {{schools.principal}}</h3>
+        <h3>Location of schools : {{schools.location}}</h3>
+
+
+        <h1>Details of students</h1>
+    {% for student in schools.students.all %}
+        <h6>Name of the student : {{student.sname}}</h6>
+        <h6>Age of student : {{student.sage}}</h6>
+    {% endfor %}
+    </center>
+{% endblock %}
